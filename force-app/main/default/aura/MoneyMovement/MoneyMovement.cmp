@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes" access="global">
+  
+    <!-- <aura:attribute name="FromAccount" type="string" />
+    <aura:attribute name="ToAccount" type="string" /> -->
+
+    <p class="slds-page-header__title" title="Trust &amp; Investment Onboarding">
+        Money Movement
+    </p>
+    <lightning:input type="text" name="fromAccount" label="From Account" 
+        aura:id="FromAccount" />
+    <lightning:input type="text" name="toAccount" label="To Account" 
+        aura:id="ToAccount" onblur="{!c.onBlurAcct}" />
+
+</aura:component>

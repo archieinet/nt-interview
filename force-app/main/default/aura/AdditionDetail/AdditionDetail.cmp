@@ -1,0 +1,35 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes"
+controller="ServiceRequestApexController" >
+        <aura:handler event="c:ServiceRequestEvent" action="{!c.storedData}" />
+
+        <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+            <aura:attribute name="RequestedType" type="string" />
+        <!-- trust -->
+            <aura:attribute name="AcctTypeSelected" type="string" />
+            <aura:attribute name="FundTypeSelected" type="string" />
+            <aura:attribute name="FundAmount" type="double" />
+        <!-- money -->
+        <aura:attribute name="FromAcct" type="string" />
+        <aura:attribute name="ToAcct" type="string" />
+
+        <aura:attribute name="PriorityList" type="string[]" />
+        <aura:attribute name="AdditDetail" type="string" />
+        
+
+        <lightning:Select aura:id="Priority" name="selPriority" label="Priority">
+            <option value="">Choose one...</option>
+            <aura:iteration items="{!v.PriorityList}" var="pick">
+                <option value="{!pick}" text="{!pick}"></option>
+            </aura:iteration>
+        </lightning:Select>
+        <label class="slds-form-element__label" for="AdditDetail">Additional Details</label>
+        <div class="slds-form-element__control">
+                <ui:inputtextarea aura:id="AdditDetail" value="{!v.AdditDetail}" class="slds-textarea" placeholder="..Additional Details" />
+        </div>
+        <lightning:input type="file" label="Attachment" name="file" multiple="true" accept="imange/png,pdf" />
+    <br />
+    <lightning:button aura:id="button" label="Go Back" onclick="{!c.goBack}" />
+    <lightning:button aura:id="button" label="Submit Request" onclick="{!c.saveData}" />
+    <lightning:button aura:id="button" label="Cancel" onclick="{!c.goBack}" />
+</aura:component>

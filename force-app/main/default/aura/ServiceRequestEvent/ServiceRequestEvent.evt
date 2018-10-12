@@ -1,0 +1,17 @@
+<aura:event type="APPLICATION" description="Request type selected" access="GLOBAL">
+    
+    <!-- request type -->
+    <aura:attribute name="RequestTypeSelected" type="string" access="global"/>
+    
+
+    <!-- trust investment -->
+    <aura:attribute name="eAccType" type="string" access="global"/>
+    <aura:attribute name="eFundType" type="string" access="global"/>
+    <aura:attribute name="eFundingAmount" type="double" access="global"/>
+    <!-- money movement -->
+    <aura:attribute name="eFromAccount" type="double" access="global"/>
+    <aura:attribute name="eToAccount" type="double" access="global"/>
+
+
+
+</aura:event>

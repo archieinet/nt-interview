@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes" 
+controller="ServiceRequestApexController" >
+        <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+        <aura:attribute name="ReqTypeList" type="string[]" /> 
+        <aura:registerEvent type="c:ServiceRequestEvent" name="cmpReqType" />
+
+        <div class="slds-page-header">
+                <p class="slds-page-header__title" title="Request Type">Request Type</p>
+        </div>
+
+        <lightning:Select aura:id="ReqType" name="selReqType" label="What kind of request would you like to submit?" class="sel-rec-type">
+                <option value="">Choose one...</option>
+                <aura:iteration items="{!v.ReqTypeList}" var="req">
+                        <option value="{!req}" text="{!req}"></option>
+                </aura:iteration>
+        </lightning:Select>
+        <br />
+        <lightning:button aura:id="button" label="Continue" onclick="{!c.onSelectedType}" />
+        <lightning:button aura:id="button" label="Cancel" onclick="{!c.CancelRequest}" />
+</aura:component>

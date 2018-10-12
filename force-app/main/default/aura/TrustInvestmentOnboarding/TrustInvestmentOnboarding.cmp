@@ -1,0 +1,29 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
+
+    <aura:attribute name="AcctPickList" type="string[]" />
+    <aura:attribute name="FundPickList" type="string[]" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <!-- <aura:registerEvent type="c:ServiceRequestEvent" name="trustInput" /> -->
+
+    <p class="slds-page-header__title" title="Trust &amp; Investment Onboarding">
+            Trust &amp; Investment Onboarding
+    </p>
+            <lightning:Select aura:id="AccType" name="selAccType" label="Account Type"
+                 > <!-- onchange="{!c.onSelected}" -->
+                <option value="">Choose one...</option>
+                <aura:iteration items="{!v.AcctPickList}" var="acct">
+                    <option value="{!acct}" text="{!acct}"></option>
+                </aura:iteration>
+            </lightning:Select>
+            <lightning:Select aura:id="FundType" name="selFundType" label="Fund Type"
+                > <!-- onchange="{!c.onSelected}" -->
+                <option value="">Choose one...</option>
+                <aura:iteration items="{!v.FundPickList}" var="fund">
+                    <option value="{!fund}" text="{!fund}"></option>
+                </aura:iteration>
+            </lightning:Select>
+                <lightning:input type="number" name="fundingAmount" label="Funding Amount"
+                formatter="currency" aura:id="FundingAmount" placeholder="1,000,000.00" 
+                onblur="{!c.onBlurAmt}" />
+</aura:component>
