@@ -1,0 +1,10 @@
+.sfdx
+.vscode
+.config
+node_modules
+.forceignore
+force-app/main/default/staticresources/SLDS261/icons
+force-app/main/default/staticresources/SLDS261/images
+force-app/main/default/flexipages
+force-app/main/default/profile
+force-app/main/default/permissionsets

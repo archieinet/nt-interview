@@ -1,0 +1,11 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ],
+  "namespace": "",
+  "sfdcLoginUrl": "https://archie-sfdx.my.salesforce.com/",
+  "sourceApiVersion": "43.0"
+}
